@@ -38,9 +38,9 @@ namespace laba_1
                     int maxG = 0;
                     int maxB = 0;
                     Color cur_color;
-                    for (int j = -kernel.GetLength(1) / 2; j < kernel.GetLength(1) / 2; j++)
+                    for (int j = -kernel.GetLength(1) / 2; j <= kernel.GetLength(1) / 2; j++)
                     {
-                        for (int i = -kernel.GetLength(0) / 2; i < kernel.GetLength(0) / 2; i++)
+                        for (int i = -kernel.GetLength(0) / 2; i <= kernel.GetLength(0) / 2; i++)
                         {
                             if (kernel[i + kernel.GetLength(0) / 2, j + kernel.GetLength(1) / 2])
                             {
@@ -91,9 +91,9 @@ namespace laba_1
                     int minG = 255;
                     int minB = 255;
                     Color cur_color;
-                    for (int j = -kernel.GetLength(1) / 2; j < kernel.GetLength(1) / 2; j++)
+                    for (int j = -kernel.GetLength(1) / 2; j <= kernel.GetLength(1) / 2; j++)
                     {
-                        for (int i = -kernel.GetLength(0) / 2; i < kernel.GetLength(0) / 2; i++)
+                        for (int i = -kernel.GetLength(0) / 2; i <= kernel.GetLength(0) / 2; i++)
                         {
                             if (kernel[i + kernel.GetLength(0) / 2, j + kernel.GetLength(1) / 2])
                             {

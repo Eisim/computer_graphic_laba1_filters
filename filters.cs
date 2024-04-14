@@ -12,6 +12,7 @@ using System.Windows.Forms.VisualStyles;
 namespace laba_1
 {
 
+
     //матричные
     class MatrixFilter : Filters
     {
@@ -68,7 +69,7 @@ namespace laba_1
         Random rand = new Random();
         protected override Color calculateNewPixelColor(Bitmap sourceImage, int x, int y)
         {
-            x = Clamp((int)(x + 20*Math.Sin(2*Math.PI*x/30)), 0, sourceImage.Width - 1);
+            y = Clamp((int)(y + 20*Math.Sin(2*Math.PI*x/60)), 0, sourceImage.Height - 1);
             return sourceImage.GetPixel(x, y);
         }
     }
@@ -255,5 +256,36 @@ namespace laba_1
         }
     }
 
-    
+    class additionalFiltes : Filters
+    {
+        /*
+* <100 - чёрный
+*  от 100 до 150 - синий
+*  от 150 до 200 - голубой
+*  >200 - белый
+*/
+        protected override Color calculateNewPixelColor(Bitmap sourceImage, int x, int y)
+        {
+            Color cur_color = sourceImage.GetPixel(x, y);
+            Color res_color = Color.FromArgb(0,0,0);
+            double intensivity= 0.36*cur_color.R + 0.53*cur_color.G + 0.11*cur_color.B;
+            if (intensivity < 100)
+            {
+                res_color = Color.FromArgb(0, 0, 0);
+            }
+            if (intensivity > 100 & intensivity < 150)
+            {
+                res_color = Color.FromArgb(0, 0, 255);
+            }
+            if (intensivity > 150 & intensivity < 200)
+            {
+                res_color = Color.FromArgb(0, 189, 255);
+            }
+            if (intensivity > 200)
+            {
+                res_color = Color.FromArgb(255, 255, 255);
+            }
+            return res_color;
+        }
+    }
 }

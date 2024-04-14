@@ -297,5 +297,11 @@ namespace laba_1
                 backgroundWorker1.RunWorkerAsync(filter);
             }
         }
+
+        private void дополнительныйToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new additionalFiltes();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
     }
 }

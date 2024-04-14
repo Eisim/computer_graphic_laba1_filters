@@ -48,7 +48,7 @@
   <ItemGroup>
     <Compile Include="Abstract filter.cs" />
     <Compile Include="mathematical morphology.cs" />
-    <Compile Include="matrix filters.cs" />
+    <Compile Include="filters.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
